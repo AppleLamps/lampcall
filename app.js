@@ -1,6 +1,8 @@
 class FakeACall {
     constructor() {
-        this.apiKey = ''; // Will be set by user
+        // Initialize API key from environment variable for Vercel deployment
+        // Set GEMINI_API_KEY as a Vercel environment variable/secret
+        this.apiKey = import.meta.env?.VITE_GEMINI_API_KEY || ''; // Will be set by Vercel environment variable
         this.websocket = null;
         this.audioContext = null;
         this.mediaStream = null;
@@ -134,11 +136,11 @@ class FakeACall {
         try {
             // Validate API key
             if (!this.apiKey) {
-                this.showErrorMessage('Please enter a valid API key');
+                this.showErrorMessage('API key not configured. Please set VITE_GEMINI_API_KEY as a Vercel environment variable.');
                 return false;
             }
-
-            // Connect to Gemini Live API via WebSocket
+            
+            // Connect to Gemini Live API via WebSocket using API key from environment variable
             const url = `wss://generativelanguage.googleapis.com/v1beta/live:streamGenerateContent?key=${this.apiKey}`;
             this.websocket = new WebSocket(url);
 
