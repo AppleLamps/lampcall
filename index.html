@@ -2,74 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>FakeACall</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="iphone-container">
         <div class="status-bar">
-            <span class="time">9:41</span>
-            <div class="status-icons">
-                <span class="signal">📶</span>
-                <span class="wifi">📡</span>
-                <span class="battery">100%</span>
+            <div class="left">
+                <span class="time">9:41</span>
+            </div>
+            <div class="right">
+                <i class="fa-solid fa-signal"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-full"></i>
             </div>
         </div>
-        
+
         <div id="ringingScreen" class="screen active">
             <div class="call-info">
-                <h2>Calling</h2>
-                <p id="contactName">Friend</p>
-                <div class="timer" id="ringTimer">00:00</div>
+                <p id="contactName" class="contact-name">Friend</p>
+                <p class="call-status">calling...</p>
             </div>
-            
-            <div class="avatar">
-                <div class="initial">F</div>
-            </div>
-            
-            <div class="call-controls">
-                <button id="declineCall" class="control-btn decline">
-                    <div class="icon">📞</div>
-                    <span>Decline</span>
-                </button>
-                <button id="answerCall" class="control-btn answer">
-                    <div class="icon">📞</div>
-                    <span>Answer</span>
-                </button>
-            </div>
-        </div>
-        
-        <div id="activeCallScreen" class="screen hidden">
-            <div class="call-info">
-                <h2>In Call</h2>
-                <p id="activeContactName">Friend</p>
-                <div class="timer" id="callTimer">00:00</div>
-            </div>
-            
-            <div class="avatar">
-                <div class="initial">F</div>
-                <div id="audioLevel" class="audio-level">
-                    <div class="bar" style="height: 20%;"></div>
-                    <div class="bar" style="height: 40%;"></div>
-                    <div class="bar" style="height: 60%;"></div>
-                    <div class="bar" style="height: 40%;"></div>
-                    <div class="bar" style="height: 20%;"></div>
+
+            <div class="call-actions-ringing">
+                <div class="action-group">
+                    <button class="action-btn-small">
+                        <i class="far fa-clock"></i>
+                        <span>Remind Me</span>
+                    </button>
+                    <button class="action-btn-small">
+                        <i class="far fa-comment-alt"></i>
+                        <span>Message</span>
+                    </button>
+                </div>
+                <div class="action-group">
+                    <button id="declineCall" class="action-btn-large decline">
+                        <i class="fa-solid fa-phone-slash"></i>
+                    </button>
+                    <button id="answerCall" class="action-btn-large answer">
+                        <i class="fa-solid fa-phone"></i>
+                    </button>
                 </div>
             </div>
-            
-            <div class="call-controls">
-                <button id="muteCall" class="control-btn">
-                    <div class="icon">🎤</div>
-                    <span>Mute</span>
-                </button>
-                <button id="speakerCall" class="control-btn">
-                    <div class="icon">🔊</div>
-                    <span>Speaker</span>
-                </button>
-                <button id="endCall" class="control-btn end-call">
-                    <div class="icon">📞</div>
-                    <span>End Call</span>
+        </div>
+
+        <div id="activeCallScreen" class="screen hidden">
+            <div class="call-info-active">
+                <p id="activeContactName" class="contact-name-active">Friend</p>
+                <div class="timer" id="callTimer">00:00</div>
+            </div>
+
+            <div class="call-controls-active">
+                <div class="control-row">
+                    <button class="control-btn-active"><i class="fa-solid fa-microphone-slash"></i><span>mute</span></button>
+                    <button class="control-btn-active"><i class="fa-solid fa-th"></i><span>keypad</span></button>
+                    <button class="control-btn-active"><i class="fa-solid fa-volume-up"></i><span>speaker</span></button>
+                </div>
+                <div class="control-row">
+                    <button class="control-btn-active"><i class="fa-solid fa-plus"></i><span>add call</span></button>
+                    <button class="control-btn-active"><i class="fa-solid fa-video"></i><span>FaceTime</span></button>
+                    <button class="control-btn-active"><i class="fa-solid fa-user-friends"></i><span>contacts</span></button>
+                </div>
+            </div>
+
+            <div class="end-call-container">
+                <button id="endCall" class="end-call-btn">
+                    <i class="fa-solid fa-phone-slash"></i>
                 </button>
             </div>
         </div>
