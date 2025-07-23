@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeACall</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="iphone-container">
+        <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="wifi">📡</span>
+                <span class="battery">100%</span>
+            </div>
+        </div>
+        
+        <div id="ringingScreen" class="screen active">
+            <div class="call-info">
+                <h2>Calling</h2>
+                <p id="contactName">Friend</p>
+                <div class="timer" id="ringTimer">00:00</div>
+            </div>
+            
+            <div class="avatar">
+                <div class="initial">F</div>
+            </div>
+            
+            <div class="call-controls">
+                <button id="declineCall" class="control-btn decline">
+                    <div class="icon">📞</div>
+                    <span>Decline</span>
+                </button>
+                <button id="answerCall" class="control-btn answer">
+                    <div class="icon">📞</div>
+                    <span>Answer</span>
+                </button>
+            </div>
+        </div>
+        
+        <div id="activeCallScreen" class="screen hidden">
+            <div class="call-info">
+                <h2>In Call</h2>
+                <p id="activeContactName">Friend</p>
+                <div class="timer" id="callTimer">00:00</div>
+            </div>
+            
+            <div class="avatar">
+                <div class="initial">F</div>
+            </div>
+            
+            <div class="call-controls">
+                <button id="muteCall" class="control-btn">
+                    <div class="icon">🎤</div>
+                    <span>Mute</span>
+                </button>
+                <button id="speakerCall" class="control-btn">
+                    <div class="icon">🔊</div>
+                    <span>Speaker</span>
+                </button>
+                <button id="endCall" class="control-btn end-call">
+                    <div class="icon">📞</div>
+                    <span>End Call</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@google/genai@0.4.0/dist/index.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
